@@ -35,3 +35,42 @@ to add the python into PATH please follow these steps
    https://github.com/akrystal/Ensemble-Learning-using-Flask/
 4. After downloading the code from github please install all the necessary packages for the model to run
 5. please follow this guide to install all the packages
+    1. To install Flask please refer this guide 
+      https://pypi.org/project/Flask/
+      and type this command in the command prompt: pip install Flask
+    2. To install Pymongo please refer this guide
+       https://pypi.org/project/pymongo/
+       and type this command in the commad prompt : pip install pymongo
+    3. To install numpy please refer this guide 
+       https://pypi.org/project/numpy/
+       and type this command in the command prompt : pip install numpy
+    4. To install pandas please refer this guide 
+       https://pypi.org/project/pandas2/
+       and type this command in the commad prompt : pip install pandas2
+    5. To install sklearn please refer this guide 
+       https://pypi.org/project/sklearn/
+       and type this command in the command prompt : pip install sklearn
+6. After installation of all those packages now setup database. we have used MongoDB which is a Schema Less database to install MongoDB please go through this link 
+   https://www.mongodb.com/download-center/community
+   select the version from the version menu and select the windows option from the os menu and click download
+7. after the installation is complete please add the Mongo to the PATH variable refer step no 2 to add PATH variable
+8. finally after installation of all the required package now you can run the project  
+9. to run the project go to the project folder and press and hold shift key and right click
+10. you will get an option as open the powershell / comand promtp here click on that 
+11. in the command prompt / powershell window type this command :
+    
+    python app.py
+    
+    this will run the program please make sure this is no error. ensure that all steps are correctly executed 
+    after typing this command you will get a message
+
+    * Serving Flask app "app" (lazy loading)
+    * Environment: production
+    WARNING: This is a development server. Do not use it in a production deployment.
+    Use a production WSGI server instead.
+    * Debug mode: on
+    * Debugger is active!
+    * Debugger PIN: 275-387-825
+    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+12. now open any browser and type the this address : http://127.0.0.1:5000/ to run the project.
