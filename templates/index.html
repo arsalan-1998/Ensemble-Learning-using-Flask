@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to the Prediction</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <script src="../static/js/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="../static/css/sweetalert2.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+  <script>
+    var preloader = document.getElementById('preloader')
+    // window.onload = () => {
+    //   preloader.classList.toggle('hide');
+    // } 
+    document.onreadystatechange = function () {
+    var state = document.readyState
+    if (state == 'interactive') {
+          document.getElementById('myPage').style.visibility="hidden";
+          document.getElementById('preloader').style.visibility="visible";
+      } else if (state == 'complete') {
+          setTimeout(function(){
+            document.getElementById('interactive');
+            document.getElementById('preloader').style.visibility="hidden";
+            document.getElementById('myPage').style.visibility="visible";
+          },1000);  
+      }
+    }
+  </script>
+  <style>
+  .preloader {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99999 !important;
+  }
+
+  .show {
+      background-color: #fff;
+      width: 100%;
+      height: 100%;
+      z-index: 99999 !important;
+    }
+
+  .hide {
+    display: none;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 99999 !important;
+  }
+
+  .beat-loader {
+    stroke: rgba(28, 74, 90, 0.9);
+    stroke-dasharray: 175;
+    stroke-dashoffset: 350;
+    -webkit-animation: draw 1.4s linear;
+    -moz-animation: draw 1.4s linear;
+    animation: draw 1.4s linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+
+  @-webkit-keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-moz-keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <div id="preloader" class="preloader">
+    <svg width="250px" height="250px" viewBox="0 0 54 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+      <defs></defs>
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path class="beat-loader" d="M0.5,38.5 L16,38.5 L19,25.5 L24.5,57.5 L31.5,7.5 L37.5,46.5 L43,38.5 L53.5,38.5" id="Path-2" stroke-width="2" sketch:type="MSShapeGroup"></path>
+      </g>
+    </svg>
+  </div>
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#banner">Home</a></li>
+                <li class=""><a href="#service">Services</a></li>
+                <li class=""><a href="#signup">Signup</a></li>
+                <li class=""><a href="#login">Login</a></li>
+                {% if isLoggedin %}
+                  <li class=""><a href="/logout">Logout</a></li>
+                {% endif %}
+                <li class=""><a href="#about">About</a></li>
+                <li class=""><a href="#testimonial">Testimonial</a></li>
+                <li class=""><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-logo text-center">
+            
+            </div>
+            <div class="banner-text text-center">
+              <h1 class="white">CARDIO-D20</h1>
+              <h2 class="white">Healthcare at your desk!!</h2>
+              
+              <a href="#contact" class="btn btn-appoint">Make an Appointment.</a>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#service"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ banner-->
+  <!--service-->
+  <section id="service" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <h2 class="ser-title">Our Service</h2>
+          <hr class="botm-line">
+          
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-stethoscope"></i>
+            </div>
+            <div class="icon-info">
+              <h4>24 Hour Support</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-ambulance"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Emergency Services</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-user-md"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Medical Counseling</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-medkit"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Premium Healthcare</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ service-->
+  <!--cta-->
+  <section id="cta-1" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="schedule-tab">
+          <div class="col-md-4 col-sm-4 bor-left">
+            <div class="mt-boxy-color"></div>
+            <div class="medi-info">
+              <h3>Emergency Case</h3>
+              <p>I am text block. Edit this text from Appearance / Customize / Homepage header columns. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+              <a href="#" class="medi-info-btn">READ MORE</a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="medi-info">
+              <h3>Emergency Case</h3>
+              <p>I am text block. Edit this text from Appearance / Customize / Homepage header columns. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+              <a href="#" class="medi-info-btn">READ MORE</a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 mt-boxy-3">
+            <div class="mt-boxy-color"></div>
+            <div class="time-info">
+              <h3>Opening Hours</h3>
+              <table style="margin: 8px 0px 0px;" border="1">
+                <tbody>
+                  <tr>
+                    <td>Monday - Friday</td>
+                    <td>8.00 - 17.00</td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td>9.30 - 17.30</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>9.30 - 15.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--cta-->
+  <!--about-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">The CARDIO-D20 </h2>
+            <hr class="botm-line">
+            <p class="sec-para">It's Never Too Early Or Too Late To Work Towards Being The Healthiest YOU.</p> 
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-12">
+          <div style="visibility: visible;" class="col-sm-9 more-features-box">
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>It's something important you want to know.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud.</p>
+              </div>
+            </div>
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>It's something important you want to know.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ about-->
+  <!--doctor team-->
+  <section id="doctor-team" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">Meet Our Doctors!</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <div class="thumbnail">
+            <img src="{{url_for('static',filename='img/doctor1.jpg')}}" alt="..." class="team-img">
+            <div class="caption">
+              <h3>Jessica </h3>
+              <p>Doctor</p>
+              <ul class="list-inline">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <div class="thumbnail">
+            <img src="{{url_for('static',filename='img/doctor2.jpg')}}" alt="..." class="team-img">
+            <div class="caption">
+              <h3>Jack</h3>
+              <p>Doctor</p>
+              <ul class="list-inline">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <div class="thumbnail">
+            <img src="static/img/doctor3.jpg" alt="..." class="team-img">
+            <div class="caption">
+              <h3>Amanda</h3>
+              <p>Doctor</p>
+              <ul class="list-inline">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <div class="thumbnail">
+            <img src="static/img/doctor4.jpg" alt="..." class="team-img">
+            <div class="caption">
+              <h3>Jason </h3>
+              <p>Doctor</p>
+              <ul class="list-inline">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ doctor team-->
+  <!--testimonial-->
+  <section id="testimonial" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">see what patients are saying?</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="testi-details">
+            <!-- Paragraph -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="testi-info">
+            <!-- User Image -->
+            <a href="#"><img src="static/img/thumb.png" alt="" class="img-responsive"></a>
+            <!-- User Name -->
+            <h3>Ron</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="testi-details">
+            <!-- Paragraph -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="testi-info">
+            <!-- User Image -->
+            <a href="#"><img src="static/img/thumb.png" alt="" class="img-responsive"></a>
+            <!-- User Name -->
+            <h3>Davis</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="testi-details">
+            <!-- Paragraph -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="testi-info">
+            <!-- User Image -->
+            <a href="#"><img src="static/img/thumb.png" alt="" class="img-responsive"></a>
+            <!-- User Name -->
+            <h3>Alex</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ testimonial-->
+  <!--cta 2-->
+  <section id="cta-2" class="section-padding">
+    <div class="container">
+      <div class=" row">
+        <div class="col-md-2"></div>
+        <div class="text-right-md col-md-4 col-sm-4">
+          <h2 class="section-title white lg-line">« A few words<br> about us »</h2>
+        </div>
+        <div class="col-md-4 col-sm-5">
+          A programmer is a person who fix a problem that you don't know you have, in a way you don't understand.
+          <p class="text-right text-primary"><i>— CARDIO-D20</i></p>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </section>
+  <!--cta-->
+  <!--Signup-->
+<section id="signup" class="section-padding">
+  <div class="container">
+      <div class="row">
+      <div class="col-md-12">
+          <h2 class="ser-title">Signup</h2>
+          <hr class="botm-line">
+      </div>
+      <div class="col-md-4 col-sm-4">
+          <h3>Signup Here</h3>
+          <div class="space"></div>
+          <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>Email</p>
+          <div class="space"></div>
+          <p><i class="fa fa-lock fa-fw pull-left fa-2x"></i>Password</p>
+      </div>
+      <div class="col-md-8 col-sm-8 marb20">
+          <div class="contact-info">
+          <h3 class="cnt-ttl">Please Enter your details correctly</h3>
+          <div class="space"></div>
+          {%- with msg = get_flashed_messages(with_categories=True) %} 
+              {% if msg %} 
+                {% for category, message in msg %}
+                <script>
+                  var message = {{ data|tojson }} 
+                  setTimeout(function(){ 
+                    Swal.fire(
+                      ''+message, 
+                      '{{ message }}', 
+                      '{{ category }}'
+                    ).then(function() {
+                        window.location = "#login"; 
+                    });
+                   }, 1500);
+                </script>
+                {% endfor %} 
+              {% endif %}
+            {% endwith %}
+          <form action="/signup" method="post">
+              <div class="form-group">
+              <input type="email" class="form-control br-radius-zero" name="user_email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              </div>
+              <div class="form-group">
+              <input type="password" class="form-control br-radius-zero" name="user_password" id="subject" placeholder="*******" data-rule="minlen:4" data-msg="Please enter at least 8 chars long password" required/>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control br-radius-zero" name="re_password" id="subject" placeholder="*******" data-rule="minlen:4" data-msg="Please enter at least 8 chars long password" required/>
+              </div>
+              <div class="form-action">
+              <button type="submit" class="btn btn-form btn-block"><span>Submit</span></button>
+              </div>
+          </form>
+          </div>
+      </div>
+      </div>
+  </div>
+</section>
+<!-- Signup-->
+  <!--Login-->
+  <section id="login" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">Login</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <h3>Login Here</h3>
+          <div class="space"></div>
+          <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>Email</p>
+          <div class="space"></div>
+          <p><i class="fa fa-lock fa-fw pull-left fa-2x"></i>Password</p>
+        </div>
+        <div class="col-md-8 col-sm-8 marb20">
+          <div class="contact-info">
+            <h3 class="cnt-ttl">Please Enter your details correctly</h3>
+            <div class="space"></div>
+            {%- with msg = get_flashed_messages(with_categories=True) %} 
+              {% if msg %} 
+                {% for category, message in msg %}
+                <script>
+                  var message = {{ data|tojson }} 
+                  setTimeout(function(){ 
+                    Swal.fire(
+                      ''+message, 
+                      '{{ message }}', 
+                      '{{ category }}'
+                    ).then(function() {
+                        window.location = "#login"; 
+                    });
+                   }, 1500);
+                </script>
+                {% endfor %} 
+              {% endif %}
+            {% endwith %}
+            <form action="/login" method="post">
+              <div class="form-group">
+                <input type="email" class="form-control br-radius-zero" name="user_email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control br-radius-zero" name="user_password" id="subject" placeholder="password" data-rule="minlen:4" data-msg="Please enter at least 8 chars long password" />
+              </div>
+              <div class="form-action">
+                <input type="submit" class="btn btn-form btn-block" value="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% if not isLoggedin %} 
+    <script>
+      (function (global) { 
+
+      if(typeof (global) === "undefined") {
+          throw new Error("window is undefined");
+      }
+
+      var _hash = "!";
+      var noBackPlease = function () {
+          global.location.href += "#";
+
+          
+          global.setTimeout(function () {
+              global.location.href += "!";
+          }, 50);
+      };
+
+      global.onhashchange = function () {
+          if (global.location.hash !== _hash) {
+              global.location.hash = _hash;
+          }
+      };
+
+      global.onload = function () {            
+          noBackPlease();
+
+          
+          document.body.onkeydown = function (e) {
+              var elm = e.target.nodeName.toLowerCase();
+              if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                  e.preventDefault();
+              }
+              // stopping event bubbling up the DOM tree..
+              e.stopPropagation();
+          };          
+      }
+
+      })(window);
+    </script>
+  {% endif %}
+  <!--/ Login-->
+  <!--contact-->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">Contact us</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <h3>Contact Info</h3>
+          <div class="space"></div>
+          <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>321 Awesome Street<br> Bhatkal, INDIA</p>
+          <div class="space"></div>
+          <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>info@companyname.com</p>
+          <div class="space"></div>
+          <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+91 8989776534</p>
+        </div>
+        <div class="col-md-8 col-sm-8 marb20">
+          <div class="contact-info">
+            <h3 class="cnt-ttl">Having Any Query! Or Book an appointment</h3>
+            <div class="space"></div>
+            <form action="/contact" method="post">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control br-radius-zero" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control br-radius-zero" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control br-radius-zero" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              </div>
+              <div class="form-group">
+                <textarea class="form-control br-radius-zero" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              </div>
+              <input type="submit" class="btn btn-form btn-block" value="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ contact-->
+  <!--footer-->
+  <footer id="footer">
+    <div class="footer-line">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            © All Rights Reserved By CARDIO-D20
+            <div class="credits">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/ footer-->
+  
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery.easing.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/custom.js"></script>
+  <script src="static/contactform/contactform.js"></script>
+</body>
+
+</html>
